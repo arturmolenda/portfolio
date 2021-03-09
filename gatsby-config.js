@@ -1,12 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Artur Molenda`,
+    description: `I'm a front-end web developer specializing in creating web applications using React`,
+    author: `Artur Molenda`,
+    siteUrl: "http://www.arturmolenda.pl",
   },
   plugins: [
+    "gatsby-plugin-postcss",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-191516031-1",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,18 +33,26 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Artur Molenda`,
+        short_name: `Artur Molenda`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "26qa8uhz",
+        dataset: "production",
+        token:
+          "skR5JrH2dZW4GuM1WeqSTZBOG8RBd2RsOrGYw63vi4djBhw4msgfYMj0BcCDsRVH5OIGzviSxEoSEjOdW047mEYvTGbLzk99BZVEDbygpiEMct80EfBy6Y3Smi1RyS6WelQyByHM5uBXb5HvjRK5NY8R6UwzSGYdtJt8ih2GE0JWfgxFw33P",
+        watchMode: true,
+        overlayDrafts: true,
+      },
+    },
   ],
 }
