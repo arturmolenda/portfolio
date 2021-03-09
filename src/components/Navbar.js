@@ -54,7 +54,7 @@ const Navbar = () => {
       }}
     >
       <nav className="flex justify-between items-center w-full">
-        <div className="flex justify-between items-center">
+        <div className="navbar flex justify-between items-center">
           <a href="#home" className="text-4xl text-white mr-4">
             <h1>LOGO</h1>
           </a>
@@ -71,7 +71,7 @@ const Navbar = () => {
             <h2>Contact</h2>
           </a>
         </div>
-        <div className="flex justify-evenly items-center">
+        <div className="navbar flex justify-evenly items-center">
           <a
             href="#resume"
             className={`${`hidden ${navLink}`} text-turquoise-default`}
@@ -110,96 +110,96 @@ const Navbar = () => {
               {open ? <CgClose /> : <CgMenuRight />}
             </i>
           </button>
-          <div
-            className="absolute h-screen bg-gray-800 right-0 top-0 z-10"
-            style={{
-              transition: "250ms",
-              transform: `translateX(${open ? 0 : 70}vw)`,
-              width: "70vw",
-            }}
-          >
-            <div className="flex flex-col justify-center items-center h-full">
-              <a
-                onClick={openHandle}
-                aria-hidden
-                href="#home"
-                className={`${navLink} w-full text-center text-2xl mb-2`}
-              >
-                <h2>Home</h2>
-              </a>
-              <a
-                onClick={openHandle}
-                aria-hidden
-                href="#about"
-                className={`${navLink} w-full text-center text-2xl mb-2`}
-              >
-                <h2>About</h2>
-              </a>
-              <a
-                onClick={openHandle}
-                aria-hidden
-                href="#projects"
-                className={`${navLink} w-full text-center text-2xl mb-2`}
-              >
-                <h2>Projects</h2>
-              </a>
-              <a
-                onClick={openHandle}
-                aria-hidden
-                href="#contact"
-                className={`${navLink} w-full text-center text-2xl mb-2`}
-              >
-                <h2>Contact</h2>
-              </a>
-              <div className="flex  mt-10">
-                <a
-                  onClick={openHandle}
-                  aria-hidden
-                  href="https://github.com/arturmolenda"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`${iconLink}`}
-                >
-                  <AiFillGithub />
-                </a>
-                <a
-                  onClick={openHandle}
-                  aria-hidden
-                  href="https://www.linkedin.com/in/artur-molenda-16950519a"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`${iconLink}`}
-                >
-                  <RiLinkedinFill />
-                </a>
-              </div>
-              <a
-                onClick={openHandle}
-                aria-hidden
-                href="#contact"
-                className={`${navLink} w-full text-center mt-2 mb-16 text-turquoise-default text-2xl`}
-              >
-                <h2
-                  style={{
-                    display: "inline-block",
-                    borderBottom: "2px solid #fff",
-                    borderRadius: 8,
-                    padding: 10,
-                  }}
-                >
-                  Resume
-                </h2>
-              </a>
-            </div>
-          </div>
-          {open && (
-            <div
-              className="absolute inset-0 h-screen w-screen"
+        </div>
+        <div
+          className="absolute h-screen bg-gray-800 right-0 top-0 z-10"
+          style={{
+            transition: "250ms",
+            transform: `translateX(${open ? 0 : 70}vw)`,
+            width: "70vw",
+          }}
+        >
+          <div className="flex flex-col justify-center items-center h-full">
+            <a
               onClick={openHandle}
               aria-hidden
-            />
-          )}
+              href="#home"
+              className={`${navLink} w-full text-center text-2xl mb-2`}
+            >
+              <h2>Home</h2>
+            </a>
+            <a
+              onClick={openHandle}
+              aria-hidden
+              href="#about"
+              className={`${navLink} w-full text-center text-2xl mb-2`}
+            >
+              <h2>About</h2>
+            </a>
+            <a
+              onClick={openHandle}
+              aria-hidden
+              href="#projects"
+              className={`${navLink} w-full text-center text-2xl mb-2`}
+            >
+              <h2>Projects</h2>
+            </a>
+            <a
+              onClick={openHandle}
+              aria-hidden
+              href="#contact"
+              className={`${navLink} w-full text-center text-2xl mb-2`}
+            >
+              <h2>Contact</h2>
+            </a>
+            <div className="flex  mt-10">
+              <a
+                onClick={openHandle}
+                aria-hidden
+                href="https://github.com/arturmolenda"
+                target="_blank"
+                rel="noreferrer"
+                className={`${iconLink}`}
+              >
+                <AiFillGithub />
+              </a>
+              <a
+                onClick={openHandle}
+                aria-hidden
+                href="https://www.linkedin.com/in/artur-molenda-16950519a"
+                target="_blank"
+                rel="noreferrer"
+                className={`${iconLink}`}
+              >
+                <RiLinkedinFill />
+              </a>
+            </div>
+            <a
+              onClick={openHandle}
+              aria-hidden
+              href="#contact"
+              className={`${navLink} w-full text-center mt-2 mb-16 text-turquoise-default text-2xl`}
+            >
+              <h2
+                style={{
+                  display: "inline-block",
+                  borderBottom: "2px solid #fff",
+                  borderRadius: 8,
+                  padding: 10,
+                }}
+              >
+                Resume
+              </h2>
+            </a>
+          </div>
         </div>
+        {open && (
+          <div
+            className="absolute inset-0 h-screen w-screen"
+            onClick={openHandle}
+            aria-hidden
+          />
+        )}
       </nav>
     </header>
   )
