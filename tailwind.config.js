@@ -8,6 +8,7 @@ module.exports = {
           light: "#83fcff",
           default: "#58e3e6",
           dark: "#39b9bc",
+          transparent: "#1ed1d61f",
         },
       },
     },
