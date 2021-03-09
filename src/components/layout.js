@@ -7,6 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div
+        id="content"
         style={{
           margin: `0 auto`,
           maxWidth: 960,
