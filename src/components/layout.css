@@ -11,6 +11,28 @@ body {
   margin: 0 auto;
   max-width: 960px;
 }
+
+@keyframes Header {
+  from {
+    opacity: 0;
+    transform: translateY(-20vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes HeaderUnderline {
+  from {
+    transform: translateX(80vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes NavbarChild {
   from {
     opacity: 0;
@@ -59,16 +81,6 @@ body {
   animation: Home 500ms ease 500ms forwards;
 }
 
-@keyframes Header {
-  from {
-    opacity: 0;
-    transform: translateY(-20vh);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes AboutLeft {
   from {
     opacity: 0;
@@ -92,6 +104,18 @@ body {
 }
 .header {
   animation: Header 300ms ease forwards;
+}
+.header::after {
+  opacity: 0;
+  display: block;
+  content: "";
+  height: 1px;
+  margin-top: 16px;
+  width: calc(100% + 32px);
+  background: #39b9bc;
+  position: relative;
+  left: -16px;
+  animation: HeaderUnderline 500ms ease 300ms forwards;
 }
 .about-l {
   animation: AboutLeft 500ms ease forwards;
