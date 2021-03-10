@@ -5,13 +5,13 @@ import { FiTool } from "react-icons/fi"
 const About = () => {
   const paragraph = "text-xl text-gray-300 p-4"
   const textTurquoise = "text-turquoise-default"
-  const listItem = "flex items-center text-lg text-white"
+  const listItem = "flex items-center text-lg text-gray-400"
   const ListIcon = <FiTool className="text-turquoise-default mr-4" />
 
   return (
     <div id="about" className="relative">
       <div className="min-h-screen flex flex-col items-start relative container mx-auto">
-        <h2 className="header border-b-2 border-turquoise-dark text-5xl text-gray-400 text-center font-thin mt-32 mx-auto p-4">
+        <h2 className="header text-5xl text-gray-400 text-center font-thin mt-32 mx-auto p-4">
           About me
         </h2>
         <div className="flex flex-col items-center justify-center xl:flex-row">
