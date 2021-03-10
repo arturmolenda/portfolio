@@ -4,10 +4,9 @@ import shapeSvg from "../../images/hero_shape.svg"
 
 const Home = () => {
   return (
-    <>
+    <div id="home">
       <div
-        id="home"
-        className="h-screen flex flex-col items-start relative"
+        className="min-h-screen flex flex-col items-start relative section-container"
         style={{ zIndex: 5 }}
       >
         <div className="text-white px-4" style={{ marginTop: "20vh" }}>
@@ -41,7 +40,7 @@ const Home = () => {
         src={shapeSvg}
         alt="hero-shape"
       />
-    </>
+    </div>
   )
 }
 
