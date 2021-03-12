@@ -6,6 +6,7 @@ import About from "../components/sections/About"
 import Home from "../components/sections/Home"
 import Projects from "../components/sections/Projects"
 import SEO from "../components/seo"
+import Contact from "../components/sections/Contact"
 
 const IndexPage = ({ data }) => {
   return (
@@ -14,6 +15,7 @@ const IndexPage = ({ data }) => {
       <Home />
       <About />
       <Projects projects={data.allSanityProject.nodes} />
+      <Contact />
     </Layout>
   )
 }
