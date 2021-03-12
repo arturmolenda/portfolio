@@ -6,9 +6,9 @@ module.exports = {
     siteUrl: "http://www.arturmolenda.pl",
   },
   plugins: [
+    `gatsby-plugin-sass`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
@@ -49,9 +49,8 @@ module.exports = {
         projectId: "26qa8uhz",
         dataset: "production",
         token:
-          "skR5JrH2dZW4GuM1WeqSTZBOG8RBd2RsOrGYw63vi4djBhw4msgfYMj0BcCDsRVH5OIGzviSxEoSEjOdW047mEYvTGbLzk99BZVEDbygpiEMct80EfBy6Y3Smi1RyS6WelQyByHM5uBXb5HvjRK5NY8R6UwzSGYdtJt8ih2GE0JWfgxFw33P",
+          "skUacdi0kq1VJssPwAkLHexq8Nti5YxGCIawnXtf22R4DXgEsDGJW2gzYJAGZ0S6teauSxf4FCJoIeqtwMRGyLI0jrfqJSwsEKuxjQoz6iWkdB5n4vf2u5KYyaJjIJ5sJ7oUhkbdn6AxbSee6YXoUy0vwOetjgms5AsD83OYjdBh3UedcKJE",
         watchMode: true,
-        overlayDrafts: true,
       },
     },
   ],
