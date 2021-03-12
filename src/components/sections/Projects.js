@@ -3,9 +3,9 @@ import ProjectItem from "../ProjectItem"
 
 const Projects = ({ projects }) => {
   return (
-    <div id="projects" className="relative">
+    <div id="projects" className="relative mb-12">
       <div className="min-h-screen flex flex-col items-start relative container mx-auto">
-        <h2 className="header text-5xl text-gray-400 text-center font-thin mt-32 mx-auto p-4 mb-4">
+        <h2 className="header text-5xl text-gray-400 text-center font-thin mx-auto p-4 mb-4 mt-20">
           Some of my projects
         </h2>
         <div className="mt-8">
