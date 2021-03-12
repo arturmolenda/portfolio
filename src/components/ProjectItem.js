@@ -12,6 +12,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
         <a
           href={demo}
           target="_blank"
+          rel="noreferrer"
           className="text-turquoise-default hover:underline"
         >
           <h3 className="text-2xl">{title}</h3>
@@ -29,13 +30,13 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
             ))}
           </div>
           <div className="flex">
-            <a href={demo} target="_blank">
+            <a href={demo} target="_blank" rel="noreferrer">
               <button style={{ transition: "250ms" }} className={btnLink}>
                 <RiExternalLinkFill className="mr-3" />
                 Live Demo
               </button>
             </a>
-            <a href={code} target="_blank">
+            <a href={code} target="_blank" rel="noreferrer">
               <button style={{ transition: "250ms" }} className={btnLink}>
                 <AiFillGithub className="mr-3" />
                 Code
@@ -45,7 +46,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
         </div>
       </div>
       <div className="rounded overflow-hidden w-full flex items-center my-auto transition scale">
-        <a href={demo} target="_blank" className="w-full">
+        <a href={demo} target="_blank" rel="noreferrer" className="w-full">
           <Img fluid={image} />
         </a>
       </div>
