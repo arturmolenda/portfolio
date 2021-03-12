@@ -9,9 +9,9 @@ const About = () => {
   const ListIcon = <FiTool className="text-turquoise-default mr-4" />
 
   return (
-    <div id="about" className="relative">
-      <div className="min-h-screen flex flex-col items-start relative container mx-auto">
-        <h2 className="header text-5xl text-gray-400 text-center font-thin mt-32 mx-auto p-4">
+    <div id="about" className="relative mb-12">
+      <div className="flex flex-col items-start relative container mx-auto">
+        <h2 className="header text-5xl text-gray-400 text-center font-thin mx-auto p-4 mt-20">
           About me
         </h2>
         <div className="flex flex-col items-center justify-center xl:flex-row">

@@ -4,7 +4,7 @@ import shapeSvg from "../../images/hero_shape.svg"
 
 const Home = () => {
   return (
-    <div id="home">
+    <div id="home" className="mb-12">
       <div
         className="min-h-screen flex flex-col items-start relative section-container"
         style={{ zIndex: 5 }}
