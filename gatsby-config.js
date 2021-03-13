@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Artur Molenda`,
-    description: `I'm a front-end web developer specializing in creating web applications using React`,
+    description: `I'm a front-end web developer specializing in building websites as well ass more challenging web applications.`,
     author: `Artur Molenda`,
-    siteUrl: "http://www.arturmolenda.pl",
+    siteUrl: "https://www.arturmolenda.pl",
+    image: "/home-screen.jpg",
+    keywords: ["arturmolenda", "artur molenda", "website", "portfolio"],
   },
   plugins: [
     {
@@ -39,13 +41,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Artur Molenda`,
-        short_name: `Artur Molenda`,
+        name: `ArturMolenda`,
+        short_name: `ArturMolenda`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#303339`,
+        theme_color: `#58e3e6`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/logo.png`,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
