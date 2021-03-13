@@ -15,21 +15,21 @@ const Home = () => {
           style={{ zIndex: 5 }}
         >
           <div className="text-white px-4" style={{ marginTop: "20vh" }}>
-            <h3 className="text-3xl">Hi, I'm</h3>
-            <h1 className="text-8xl text-turquoise-dark font-bold">
+            <h3 className="text-xl sm:text-3xl">Hi, I'm</h3>
+            <h1 className="text-5xl sm:text-8xl my-3 text-turquoise-dark font-bold">
               Artur Molenda
             </h1>
-            <h3 className="text-4xl text-gray-300 font-bold">
-              Front end Web Developer
+            <h3 className="text-2xl sm:text-4xl text-gray-300 font-bold">
+              A Front end Web Developer
             </h3>
-            <h4 className="text-xl font-bold mt-4 text-turquoise-dark">
+            <h4 className="text-lg sm:text-xl font-bold mt-4 text-turquoise-dark">
               I like to build websites.
             </h4>
           </div>
-          <AnchorLink to="/#projects">
+          <AnchorLink to="/#projects" className="ml-4 mt-8">
             <button
               style={{ transition: "250ms" }}
-              className="ml-4 mt-8 px-7 py-3 border-2 border-turquoise-default rounded text-xl text-turquoise-default hover:bg-turquoise-transparent"
+              className="px-7 py-3 z-10 border-2 border-turquoise-default rounded text-xl text-turquoise-default hover:bg-turquoise-transparent"
             >
               My Projects
             </button>
@@ -38,6 +38,7 @@ const Home = () => {
             className="absolute bottom-0"
             src={programmingSvg}
             alt="hero-type"
+            style={{ zIndex: -1 }}
           />
         </div>
       </Reveal>

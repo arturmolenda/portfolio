@@ -11,7 +11,7 @@ const Contact = () => {
     <div id="contact" className="relative mb-20">
       <div className="flex flex-col items-start relative container mx-auto z-10">
         <Reveal effect="header">
-          <h2 className="text-5xl text-gray-400 text-center font-thin mx-auto p-4 mb-4 mt-20">
+          <h2 className="text-4xl sm:text-5xl text-gray-400 text-center font-thin mx-auto p-4 mb-4 mt-20">
             Contact me
           </h2>
         </Reveal>
@@ -51,14 +51,16 @@ const Contact = () => {
             </form>
             <div className="p-4 bg-gray-800 w-full mt-8 rounded-xl text-gray-200 text-xl font-thin relative">
               <div className="mb-2 p-2 border-b border-turquoise-dark flex items-center">
-                <FaMapMarkerAlt className="text-turquoise-dark mr-8 text-3xl" />{" "}
-                Toruń | Poland
+                <FaMapMarkerAlt className="text-turquoise-dark mr-8 text-2xl sm:text-3xl" />{" "}
+                <span className="text-lg sm:text-xl">Toruń | Poland</span>
               </div>
               <div className="mb-2 p-2 flex items-center">
-                <FaEnvelope className="text-turquoise-dark mr-8 mt-1 text-3xl" />{" "}
-                a.p.molenda@gmail.com
+                <FaEnvelope className="text-turquoise-dark mr-8 mt-1 text-2xl sm:text-3xl" />{" "}
+                <span className="text-lg sm:text-xl">
+                  a.p.molenda@gmail.com
+                </span>
               </div>
-              <div className="p-5 flex justify-around items-center bg-gray-900 rounded-xl text-5xl text-turquoise-default">
+              <div className="p-5 flex justify-around items-center bg-gray-900 rounded-xl text-4xl sm:text-5xl text-turquoise-default">
                 <a
                   href="https://github.com/arturmolenda"
                   target="_blank"
