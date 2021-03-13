@@ -5,7 +5,7 @@ import { RiLinkedinFill } from "react-icons/ri"
 import { CgMenuRight, CgClose } from "react-icons/cg"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-const Navbar = () => {
+const Navbar = ({ resumeUrl }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
   const [open, setOpen] = useState(false)
@@ -58,7 +58,7 @@ const Navbar = () => {
     "text-white text-3xl mx-2 hover:text-turquoise-default md:inline"
   return (
     <header
-      className="bg-gray-700 w-full h-16 flex items-center justify-center fixed z-10 pl-6 pr-3 xl:px-16"
+      className="bg-gray-800 w-full h-16 flex items-center justify-center fixed z-10 pl-6 pr-3 xl:px-16"
       style={{
         transition: "250ms",
         transform: `translateY(${visible || linkClicked ? 0 : -4}rem)`,
@@ -104,13 +104,6 @@ const Navbar = () => {
           </AnchorLink>
         </div>
         <div className="navbar flex justify-evenly items-center">
-          <AnchorLink
-            onAnchorLinkClick={anchorLinkClick}
-            to="/#resume"
-            className={`${`hidden ${navLink}`} text-turquoise-default`}
-          >
-            <h2>Resume</h2>
-          </AnchorLink>
           <a
             href="https://github.com/arturmolenda"
             target="_blank"
@@ -127,7 +120,15 @@ const Navbar = () => {
           >
             <RiLinkedinFill />
           </a>
-
+          <a
+            onClick={anchorLinkClick}
+            href={resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={`${`hidden ${navLink}`} text-turquoise-default`}
+          >
+            <h2>Resume</h2>
+          </a>
           <button
             className="md:hidden block text-turquoise-default p-2 text-4xl z-20"
             onClick={openHandle}
@@ -145,7 +146,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className="absolute h-screen bg-gray-800 right-0 top-0 z-10"
+          className="absolute h-screen bg-gray-900 right-0 top-0 z-10"
           style={{
             transition: "250ms",
             transform: `translateX(${open ? 0 : 70}vw)`,
@@ -211,11 +212,11 @@ const Navbar = () => {
                 <RiLinkedinFill />
               </a>
             </div>
-            <AnchorLink
+            <a
               onClick={openHandle}
-              aria-hidden
-              onAnchorLinkClick={anchorLinkClick}
-              to="/#contact"
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
               className={`${navLink} w-full text-center mt-2 mb-16 text-turquoise-default text-2xl`}
             >
               <h2
@@ -228,7 +229,7 @@ const Navbar = () => {
               >
                 Resume
               </h2>
-            </AnchorLink>
+            </a>
           </div>
         </div>
         {open && (

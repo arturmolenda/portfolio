@@ -10,7 +10,7 @@ import Contact from "../components/sections/Contact"
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
+    <Layout resumeUrl={data.sanityResume.resume.asset.url}>
       <SEO title="Artur Molenda" />
       <Home />
       <About />
@@ -23,13 +23,21 @@ export default IndexPage
 
 export const query = graphql`
   {
+    sanityResume {
+      resume {
+        asset {
+          url
+        }
+      }
+    }
     allSanityProject {
       nodes {
         title
+        techStack
+        id
         description
         demo
         code
-        techStack
         image {
           asset {
             fluid(maxWidth: 1200) {
@@ -37,7 +45,6 @@ export const query = graphql`
             }
           }
         }
-        id
       }
     }
   }

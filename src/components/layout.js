@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import shapeSvg from "../images/contact_shape.svg"
 import "./layout.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, resumeUrl }) => {
   return (
     <div className="relative">
       <div
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
           zIndex: -1,
         }}
       />
-      <Navbar />
+      <Navbar resumeUrl={resumeUrl} />
       <div id="content">
         <main>{children}</main>
         <footer className="mt-12 mb-5 relative">
