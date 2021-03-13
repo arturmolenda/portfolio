@@ -2,46 +2,83 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description = "", lang = "en", meta = [], title }) => {
+const SEO = ({
+  description = "",
+  lang = "en",
+  meta = [],
+  title = "",
+  image = null,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
+            defaultTitle: title
+            defaultDescription: description
             author
+            defaultImage: image
+            siteUrl
+            keywords
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const {
+    defaultTitle,
+    defaultDescription,
+    siteUrl,
+    defaultImage,
+    author,
+    keywords,
+  } = site.siteMetadata
+
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image || defaultImage}`,
+  }
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title ? title : defaultTitle}
+      title={seo.title}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          name: "keywords",
+          content: keywords.join(","),
         },
         {
           property: `og:title`,
-          content: title,
+          content: seo.title,
+        },
+        {
+          property: `image`,
+          content: seo.image,
+        },
+        {
+          property: `og:image`,
+          content: seo.image,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `author`,
+          content: author,
         },
         {
           name: `twitter:card`,
@@ -49,15 +86,19 @@ const SEO = ({ description = "", lang = "en", meta = [], title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: author,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seo.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          name: `google-site-verification`,
+          content: "SyEnj1JY0Om2FppXmsrMq6XRHDqYr8OtWf1nTbK8XwU",
         },
       ].concat(meta)}
     />
