@@ -6,6 +6,12 @@ module.exports = {
     siteUrl: "http://www.arturmolenda.pl",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 500,
+      },
+    },
     `gatsby-plugin-sass`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-react-helmet`,
