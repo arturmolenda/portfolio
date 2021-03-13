@@ -1,10 +1,11 @@
 import * as React from "react"
 import Navbar from "./Navbar"
+import shapeSvg from "../images/contact_shape.svg"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="relative">
       <div
         className="fixed inset-0"
         style={{
@@ -16,19 +17,26 @@ const Layout = ({ children }) => {
       <Navbar />
       <div id="content">
         <main>{children}</main>
-        <footer className="mt-12 mb-5 text-center text-gray-400">
-          © {new Date().getFullYear()} Built by{" "}
-          <a
-            href="https://github.com/arturmolenda"
-            className="text-turquoise-dark"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Artur Molenda
-          </a>
+        <footer className="mt-12 mb-5 relative">
+          <div className="z-10 text-center relative text-gray-400 font-medium">
+            © {new Date().getFullYear()} Built by{" "}
+            <a
+              href="https://github.com/arturmolenda"
+              className="text-turquoise-dark"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Artur Molenda
+            </a>
+          </div>
+          <img
+            className="absolute -bottom-5 left-0"
+            src={shapeSvg}
+            alt="hero-shape"
+          />
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
