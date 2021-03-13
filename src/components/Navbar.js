@@ -52,6 +52,11 @@ const Navbar = ({ resumeUrl }) => {
     return () => window.removeEventListener("resize", resizeHandle)
   }, [resizeHandle])
 
+  const hamburgerMenuLinkClick = () => {
+    openHandle()
+    anchorLinkClick()
+  }
+
   const navLink =
     "text-white text-base mx-4 my-0 transition-colors py-4 hover:text-turquoise-default md:inline"
   const iconLink =
@@ -155,36 +160,32 @@ const Navbar = ({ resumeUrl }) => {
         >
           <div className="flex flex-col justify-center items-center h-full">
             <AnchorLink
-              onClick={openHandle}
               aria-hidden
-              onAnchorLinkClick={anchorLinkClick}
+              onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#home"
               className={`${navLink} w-full text-center text-2xl mb-2`}
             >
               <h2>Home</h2>
             </AnchorLink>
             <AnchorLink
-              onClick={openHandle}
               aria-hidden
-              onAnchorLinkClick={anchorLinkClick}
+              onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#about"
               className={`${navLink} w-full text-center text-2xl mb-2`}
             >
               <h2>About</h2>
             </AnchorLink>
             <AnchorLink
-              onClick={openHandle}
               aria-hidden
-              onAnchorLinkClick={anchorLinkClick}
+              onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#projects"
               className={`${navLink} w-full text-center text-2xl mb-2`}
             >
               <h2>Projects</h2>
             </AnchorLink>
             <AnchorLink
-              onClick={openHandle}
               aria-hidden
-              onAnchorLinkClick={anchorLinkClick}
+              onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#contact"
               className={`${navLink} w-full text-center text-2xl mb-2`}
             >
