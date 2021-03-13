@@ -61,13 +61,16 @@ const Navbar = ({ resumeUrl }) => {
     "text-white text-base mx-4 my-0 transition-colors py-4 hover:text-turquoise-default md:inline"
   const iconLink =
     "text-white text-3xl mx-2 hover:text-turquoise-default md:inline"
+  const menuLink = "w-full text-center text-xl sm:text-2xl mb-2 mb-2"
+
   return (
     <header
-      className="bg-gray-800 w-full h-16 flex items-center justify-center fixed z-10 pl-6 pr-3 xl:px-16"
+      className="bg-gray-800 w-full h-16 flex items-center justify-center fixed pl-6 pr-3 xl:px-16"
       style={{
         transition: "250ms",
         transform: `translateY(${visible || linkClicked ? 0 : -4}rem)`,
         boxShadow: (visible || linkClicked) && "0 10px 30px -10px #374151",
+        zIndex: 1111,
       }}
     >
       <nav className="flex justify-between items-center w-full">
@@ -163,7 +166,7 @@ const Navbar = ({ resumeUrl }) => {
               aria-hidden
               onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#home"
-              className={`${navLink} w-full text-center text-2xl mb-2`}
+              className={`${navLink} ${menuLink}`}
             >
               <h2>Home</h2>
             </AnchorLink>
@@ -171,7 +174,7 @@ const Navbar = ({ resumeUrl }) => {
               aria-hidden
               onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#about"
-              className={`${navLink} w-full text-center text-2xl mb-2`}
+              className={`${navLink} ${menuLink}`}
             >
               <h2>About</h2>
             </AnchorLink>
@@ -179,7 +182,7 @@ const Navbar = ({ resumeUrl }) => {
               aria-hidden
               onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#projects"
-              className={`${navLink} w-full text-center text-2xl mb-2`}
+              className={`${navLink} ${menuLink}`}
             >
               <h2>Projects</h2>
             </AnchorLink>
@@ -187,7 +190,7 @@ const Navbar = ({ resumeUrl }) => {
               aria-hidden
               onAnchorLinkClick={hamburgerMenuLinkClick}
               to="/#contact"
-              className={`${navLink} w-full text-center text-2xl mb-2`}
+              className={`${navLink} ${menuLink}`}
             >
               <h2>Contact</h2>
             </AnchorLink>

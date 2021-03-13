@@ -4,7 +4,7 @@ import { FiTool } from "react-icons/fi"
 import Reveal from "react-reveal/Reveal"
 
 const About = () => {
-  const paragraph = "text-xl text-gray-300 p-4"
+  const paragraph = "text-md sm:text-xl text-gray-300 p-4"
   const textTurquoise = "text-turquoise-default"
   const listItem = "flex items-center text-lg text-gray-400"
   const ListIcon = <FiTool className="text-turquoise-default mr-4" />
@@ -13,14 +13,14 @@ const About = () => {
     <div id="about" className="relative mb-12">
       <div className="flex flex-col items-start relative container mx-auto">
         <Reveal effect="header">
-          <h2 className="text-5xl text-gray-400 text-center font-thin mx-auto p-4 mt-20">
+          <h2 className="text-4xl sm:text-5xl text-gray-400 text-center font-thin mx-auto p-4 mt-20">
             About me
           </h2>
         </Reveal>
         <div className="flex flex-col items-center justify-center xl:flex-row">
           <Reveal effect="about-l">
-            <div className="mx-16 md:mx-32 mt-10">
-              <p className={`${paragraph} text-2xl`}>
+            <div className="mx-3 sm:mx-16 md:mx-32 mt-10">
+              <p className={`${paragraph} text-xl sm:text-2xl`}>
                 Hey! I'm <span className={textTurquoise}>Artur</span>, a web
                 developer mostly focused on frontend development (and some
                 backend too!).

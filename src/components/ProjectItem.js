@@ -6,7 +6,7 @@ import Reveal from "react-reveal/Reveal"
 
 const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
   const btnLink =
-    "mr-4 pl-5 pr-7 py-2.5 flex items-center justify-between border-2 border-turquoise-default rounded text-xl text-turquoise-default hover:bg-turquoise-transparent"
+    "mr-4 pl-3 pr-5 py-2 flex items-center justify-between border-2 border-turquoise-default rounded text-lg sm:text-xl text-turquoise-default hover:bg-turquoise-transparent"
   return (
     <Reveal effect="project-item">
       <div className="flex flex-col-reverse xl:flex-row relative w-11/12 mx-auto mb-10 dropshadow">
@@ -17,14 +17,14 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
             rel="noreferrer"
             className="text-turquoise-default hover:underline"
           >
-            <h3 className="text-2xl">{title}</h3>
+            <h3 className="text-xl sm:text-2xl">{title}</h3>
           </a>
-          <p className="my-4 text-gray-200 text-lg font-thin p-3 bg-gray-700 rounded">
+          <p className="my-4 text-gray-200 text-base sm:text-lg font-thin p-3 bg-gray-700 rounded">
             {description}
           </p>
           <div className="border-t border-gray-600 mb-3" />
           <div className="flex flex-col justify-between h-full">
-            <div className="flex mb-8">
+            <div className="flex flex-wrap mb-8">
               {techStack.map(item => (
                 <p key={item} className="text-gray-400 font-medium mr-3">
                   {item}
@@ -35,7 +35,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
               <a href={demo} target="_blank" rel="noreferrer">
                 <button style={{ transition: "250ms" }} className={btnLink}>
                   <RiExternalLinkFill className="mr-3" />
-                  Live Demo
+                  Demo
                 </button>
               </a>
               <a href={code} target="_blank" rel="noreferrer">
@@ -47,7 +47,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
             </div>
           </div>
         </div>
-        <div className="rounded overflow-hidden w-full flex items-center my-auto transition scale">
+        <div className="rounded overflow-hidden w-full flex items-center my-auto transition xl:scale relative -bottom-2 xl:bottom-0">
           <a href={demo} target="_blank" rel="noreferrer" className="w-full">
             <Img fluid={image} />
           </a>
