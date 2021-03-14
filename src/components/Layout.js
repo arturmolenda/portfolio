@@ -3,10 +3,10 @@ import Navbar from "./Navbar"
 import shapeSvg from "../images/contact_shape.svg"
 import "./layout.scss"
 
-const Layout = ({ children, resumeUrl }) => {
+const Layout = ({ children, resumeUrl, logo }) => {
   return (
     <div className="relative">
-      <Navbar resumeUrl={resumeUrl} />
+      <Navbar resumeUrl={resumeUrl} logo={logo} />
       <div id="content" style={{ overflowX: "hidden" }}>
         <main>{children}</main>
         <footer className="mt-12 mb-5 relative">
