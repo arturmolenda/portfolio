@@ -53,17 +53,16 @@ const Contact = () => {
           <div className="contact flex flex-col w-10/12 sm:w-full sm:max-w-md mx-auto">
             <form
               className="flex flex-col"
-              name="contact"
-              method="POST"
-              onSubmit={handleSubmit}
               data-netlify="true"
+              name="contact-form"
+              onSubmit={handleSubmit}
             >
               <input
                 type="text"
                 name="name"
                 placeholder="Name"
                 className={fieldStyles}
-                require
+                required
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
@@ -72,7 +71,7 @@ const Contact = () => {
                 name="email"
                 placeholder="Email"
                 className={fieldStyles}
-                require
+                required
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
@@ -81,7 +80,7 @@ const Contact = () => {
                 name="message"
                 placeholder="Message"
                 className={fieldStyles}
-                require
+                required
                 value={message}
                 onChange={e => setMessage(e.target.value)}
               />
