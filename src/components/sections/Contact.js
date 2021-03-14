@@ -1,10 +1,18 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa"
 import { AiFillGithub } from "react-icons/ai"
 import { RiLinkedinFill } from "react-icons/ri"
 import Reveal from "react-reveal/Reveal"
 
 const Contact = () => {
+  const [success, setSuccess] = useState(false)
+
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true)
+    }
+  }, [])
+
   const fieldStyles =
     "w-full rounded my-1 p-3 text-xl bg-gray-200 text-gray-900"
   return (
@@ -17,7 +25,13 @@ const Contact = () => {
         </Reveal>
         <Reveal effect="contact">
           <div className="contact flex flex-col w-10/12 sm:w-full sm:max-w-md mx-auto">
-            <form className="flex flex-col">
+            <form
+              className="flex flex-col"
+              name="contact"
+              method="POST"
+              action="/?success=true"
+              data-netlify="true"
+            >
               <input
                 type="text"
                 name="name"
@@ -41,6 +55,7 @@ const Contact = () => {
               />
 
               <button
+                type="submit"
                 style={{ transition: "250ms" }}
                 className={
                   "py-2.5 mt-4 rounded-lg w-full border-2 border-turquoise-default text-turquoise-default hover:bg-turquoise-transparent"
@@ -49,6 +64,11 @@ const Contact = () => {
                 Send
               </button>
             </form>
+            {success && (
+              <p className="text-green-400 text-center mt-7 font-semibold">
+                Thanks for your message!
+              </p>
+            )}
             <div className="p-4 bg-gray-800 w-full mt-8 rounded-xl text-gray-200 text-xl font-thin relative">
               <div className="mb-2 p-2 border-b border-turquoise-dark flex items-center">
                 <FaMapMarkerAlt className="text-turquoise-dark mr-8 text-2xl sm:text-3xl" />{" "}
