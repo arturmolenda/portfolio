@@ -4,8 +4,9 @@ import { AiFillGithub } from "react-icons/ai"
 import { RiLinkedinFill } from "react-icons/ri"
 import { CgMenuRight, CgClose } from "react-icons/cg"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import Img from "gatsby-image"
 
-const Navbar = ({ resumeUrl }) => {
+const Navbar = ({ resumeUrl, logo }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
   const [open, setOpen] = useState(false)
@@ -78,9 +79,11 @@ const Navbar = ({ resumeUrl }) => {
           <AnchorLink
             onAnchorLinkClick={anchorLinkClick}
             to="/#home"
-            className="text-4xl text-white mr-4"
+            className="text-4xl text-white mr-4 w-8"
           >
-            <h1>LOGO</h1>
+            <div style={{ filter: "brightness(1.5)" }}>
+              <Img fluid={logo} alg="Logo" />
+            </div>
           </AnchorLink>
           <AnchorLink
             onAnchorLinkClick={anchorLinkClick}
