@@ -58,7 +58,7 @@ const Contact = () => {
               name="contact-form"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="contact-form" value="contact" />
+              <input type="hidden" name="form-name" value="contact-form" />
               <input
                 type="text"
                 name="name"
