@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa"
 import { AiFillGithub } from "react-icons/ai"
 import { RiLinkedinFill } from "react-icons/ri"
@@ -6,12 +6,38 @@ import Reveal from "react-reveal/Reveal"
 
 const Contact = () => {
   const [success, setSuccess] = useState(false)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
 
-  useEffect(() => {
-    if (window.location.search.includes("success=true")) {
-      setSuccess(true)
-    }
-  }, [])
+  const clearForm = () => {
+    setName("")
+    setEmail("")
+    setMessage("")
+  }
+
+  const encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    setSuccess(false)
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "form-contato", name, email, message }),
+    })
+      .then(() => {
+        setSuccess(true)
+        clearForm()
+      })
+      .catch(error => {
+        clearForm()
+        console.log(error)
+      })
+  }
 
   const fieldStyles =
     "w-full rounded my-1 p-3 text-xl bg-gray-200 text-gray-900"
@@ -29,7 +55,7 @@ const Contact = () => {
               className="flex flex-col"
               name="contact"
               method="POST"
-              action="/?success=true"
+              onSubmit={handleSubmit}
               data-netlify="true"
             >
               <input
@@ -37,21 +63,27 @@ const Contact = () => {
                 name="name"
                 placeholder="Name"
                 className={fieldStyles}
-                required
+                require
+                value={name}
+                onChange={e => setName(e.target.value)}
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
                 className={fieldStyles}
-                required
+                require
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
               <textarea
                 rows="5"
                 name="message"
                 placeholder="Message"
                 className={fieldStyles}
-                required
+                require
+                value={message}
+                onChange={e => setMessage(e.target.value)}
               />
 
               <button
