@@ -69,7 +69,7 @@ const Navbar = ({ resumeUrl, logo }) => {
       className="bg-gray-800 w-full h-16 flex items-center justify-center fixed pl-6 pr-3 xl:px-16"
       style={{
         transition: "250ms",
-        transform: `translateY(${visible || linkClicked ? 0 : -4}rem)`,
+        transform: `translateY(${visible || linkClicked || open ? 0 : -4}rem)`,
         boxShadow: (visible || linkClicked) && "0 10px 30px -10px #374151",
         zIndex: 1111,
       }}
