@@ -15,8 +15,11 @@ body {
   filter: drop-shadow(0px 24px 13px rgba(0, 0, 0, 0.75));
 }
 .scale:hover {
-  transform: scale(1.02);
+  @media (min-width: 1280px) {
+    transform: scale(1.02);
+  }
 }
+
 .section-container {
   margin: 0 auto;
   max-width: 960px;

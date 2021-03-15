@@ -146,7 +146,7 @@ const Navbar = ({ resumeUrl, logo }) => {
             aria-hidden
           >
             <i
-              className=" block transition"
+              className="flex items-center transition"
               style={{
                 transition: "300ms",
                 transform: `rotate(${open ? -180 : 0}deg)`,
