@@ -10,7 +10,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
   return (
     <Reveal effect="project-item">
       <div className="flex flex-col-reverse xl:flex-row relative w-11/12 mx-auto mb-10 dropshadow">
-        <div className="flex flex-col flex-auto p-5 relative bg-gray-800 rounded-lg xl:w-2/3">
+        <div className="flex flex-col flex-auto p-5 xl:pr-7 relative bg-gray-800 rounded-lg xl:w-2/3">
           <a
             href={demo}
             target="_blank"
@@ -47,7 +47,7 @@ const ProjectItem = ({ demo, code, title, description, techStack, image }) => {
             </div>
           </div>
         </div>
-        <div className="rounded overflow-hidden w-full flex items-center my-auto transition xl:scale relative -bottom-2 xl:bottom-0">
+        <div className="rounded overflow-hidden w-full flex items-center my-auto transition relative -bottom-2 xl:bottom-0 xl:-left-2 scale">
           <a href={demo} target="_blank" rel="noreferrer" className="w-full">
             <Img fluid={image} />
           </a>
